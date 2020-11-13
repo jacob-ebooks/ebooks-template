@@ -12,7 +12,7 @@ var CONFIG = {
   base_url: "https://github.com/ruanyf/es6tutorial/edit/gh-pages",
 
   // where we want to search something from eht doc based on github.com
-  search_url:"https://github.com/ruanyf/es6tutorial/search?utf8=✓&q=" 
+  search_url:"https://github.com/cosmos-sunshine/python-tools/search?utf8=✓&q=" 
 };
 
 // **************************
