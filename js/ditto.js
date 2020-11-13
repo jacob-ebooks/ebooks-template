@@ -78,7 +78,6 @@ function init_sidebar_section() {
             }
             location.hash = menu[i + 1];
         });
-        // create_banner($(ditto.sidebar_id).find('p:nth-child(3)').first());
 
     }, "text").fail(function() {
         alert("Opps! can't find the sidebar file to display!");
@@ -89,32 +88,19 @@ function init_searchbar() {
   var search = '<form class="searchBox" onSubmit="return searchbar_listener()">' +
     '<input name="search" type="search">' +
     '<input type="image" class="searchButton" src="images/magnifier.jpg" alt="Search" />' +
-//    '<a class="searchLink" href="#" target="_blank"><img src="images/magnifier.jpg"></a>' +
     '</form>';
   $(ditto.sidebar_id).find('h2').first().before($(search));
-  // $('input.searchButton').click(searchbar_listener);
-  // $('input[name=search]').keydown(searchbar_listener);
 }
 
 function searchbar_listener(event) {
     // event.preventDefault();
     var q = $('input[name=search]').val();
     if (q !== '') {
-      // var url = 'https://github.com/ruanyf/es6tutorial/search?utf8=✓&q=' + encodeURIComponent(q);
       var url = ditto.search_url + encodeURIComponent(q);
       window.open(url, '_blank');
       win.focus();
     }
     return false;
-  /*
-  if (event.which === 13) {
-    var q = $('input[name=search]').val();
-    if (q !== '') {
-      var url = 'https://github.com/ruanyf/es6tutorial/search?utf8=✓&q=' + encodeURIComponent(q);
-      location.href = url;
-    }
-  }
-  */
 }
 
 function init_theme_button() {
@@ -221,7 +207,6 @@ function li_create_linkage(li_tag, header_level) {
 }
 
 function create_banner(element) {
-  // 2020年11月1日
   var deadline = new Date(2020, 10, 1);
   if (deadline - (new Date()) < 0) return;
 
