@@ -171,14 +171,6 @@ function init_edit_button() {
   }
 }
 
-function replace_symbols(text) {
-  // replace symbols with underscore
-  return text
-    .replace(/, /g, ',')
-    .replace(/[&\!\/\\#,.+=$~%'":*?<>{}\ \]\[]/g, "-")
-    .replace(/[()]/g, '');
-}
-
 function li_create_linkage(li_tag, header_level) {
   // add custom id and class attributes
   html_safe_tag = replace_symbols(li_tag.text());
