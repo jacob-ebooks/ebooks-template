@@ -20,29 +20,6 @@ var ditto = {
     run: initialize
 };
 
-/**
- * 获取当前hash
- *
- * @param {string} hash 要解析的hash，默认取当前页面的hash，如： nav#类目 => {nav:nav, anchor:类目}
- * @description 分导航和页面锚点
- * @return {Object} {nav:导航, anchor:页面锚点}
- */
-var getHash = function (hash) {
-  hash = hash || window.location.hash.substr(1);
-
-  if (!hash) {
-    return {
-      nav: '',
-      anchor: ''
-    }
-  }
-
-  hash = hash.split('#');
-  return {
-    nav: hash[0],
-    anchor: decodeURIComponent(hash[1] || '')
-  }
-};
 
 var disqusCode = '<h3>留言</h3><div id="disqus_thread"></div>';
 var menu = new Array();
@@ -75,7 +52,7 @@ function init_sidebar_section() {
         $(ditto.sidebar_id).html(marked(data));
 
         if (ditto.search_bar) {
-           init_searchbar();
+          init_searchbar();
         }
 
         // 初始化内容数组
