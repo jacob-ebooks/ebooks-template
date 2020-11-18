@@ -1,16 +1,19 @@
 define([
     'jquery',
     'backbone',
-    'underscore'
-], function ($, Backbone, _) {
+    'underscore',
+    'handlebars',
+    'text!app/content/ContentTemplate.html'
+], function ($, Backbone, _, Handlebars, ContentTemplate) {
     'use strict';   
     return Backbone.View.extend({
 
         el: '#content',
 
+        template: Handlebars.compile(ContentTemplate),
+
         initialize: function(){
-            this.setContent($el);
-            console.log('content init');
+            $('#app').append(this.template());
         },
 
         render: function () {

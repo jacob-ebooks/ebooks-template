@@ -1,19 +1,36 @@
 define([
     'jquery',
     'backbone',
-    'underscore'
-], function($, Backbone, _) {
+    'underscore',
+    'handlebars',
+    'marked',
+    'app/sidebar/SidebarModel',
+    'text!app/sidebar/SidebarTemplate.html',
+    './SearchBarView'
+], function($, Backbone, _, Handlebars, marked, SidebarModel, SidebarTemplate, SearchBarView) {
     'use strict';
 
     return Backbone.View.extend({
-        el: '#sidebar',
+        el: $('#sidebar'),
+
+        template: Handlebars.compile(SidebarTemplate),
 
         initialize: function() {
-            console.log('sidebar init');
+            $('#app').append(this.template());
         },
 
-        render: function() {
+        initSearchBar: function() {
+            var searchbar = new SearchBarView();
+            searchbar.render();
+        },
+
+        render: function(viewdata) {
+            $('#sidebar').html(viewdata['data']);
+            this.initSearchBar();
             console.log('sidebar render');
+            return this;
         }
-    })
+
+    });
+
 });
