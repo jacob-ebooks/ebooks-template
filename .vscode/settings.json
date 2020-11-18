@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Visual Studio Light",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.showFoldingControls": "always"
+}

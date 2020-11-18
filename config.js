@@ -1,30 +1,23 @@
-var CONFIG = {
-  // your website's title
-  document_title: "ECMAScript 6入门",
-
-  // index page
-  index: "docs/README.md",
-
-  // sidebar file
-  sidebar_file: "docs/sidebar.md",
-
-  // where the docs are actually stored on github - so you can edit
-  base_url: "https://github.com/ruanyf/es6tutorial/edit/gh-pages",
-
-  // where we want to search something from eht doc based on github.com
-  search_url:"https://github.com/cosmos-sunshine/python-tools/search?utf8=✓&q=" 
-};
-
-// **************************
-// DON'T EDIT FOLLOWING CODES
-// **************************
-
-addConfig(ditto, CONFIG);
-
-function addConfig(obj, conf) {
-  Object.keys(conf).forEach(function (key) {
-    obj[key] = conf[key];
-  });
-}
-
-ditto.run();
+require.config({
+    paths: {
+        'jquery': 'js/jquery-1.11.0.min',
+        'jquery-ui': 'js/jquery-ui.min',
+        'underscore': 'js/underscore-1.11.0',
+        'backbone': 'js/backbone-1.4.0',
+        'handlebars': 'js/handlebars-v4.7.6',
+        'text': 'js/require-text-2.0.16',
+        'i18n': 'js/require-i18n-2.0.6',
+        'marked': 'js/marked',
+        'prism': 'js/prism',
+        'store': 'js/store'
+    },
+    shim: {
+        'underscore': {
+            exports: '_'
+        },
+        'backbone': {
+            deps: ['jquery', 'underscore'],
+            exports: 'Backbone'
+        }
+    }
+});
