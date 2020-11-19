@@ -1,7 +1,7 @@
 require.config({
     paths: {
-        'jquery': 'js/jquery-1.11.0.min',
-        'jquery-ui': 'js/jquery-ui.min',
+        'jquery': 'js/jquery-1.11.0',
+        'jquery-ui': 'js/jquery-ui',
         'underscore': 'js/underscore-1.11.0',
         'backbone': 'js/backbone-1.4.0',
         'handlebars': 'js/handlebars-v4.7.6',
