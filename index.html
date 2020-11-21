@@ -3,38 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="res/css/normalize.css">
+  <link rel="stylesheet" href="res/css/app.css">
   <title>ES6 入门教程</title>
-  <link rel="shortcut icon" href="/favicon.svg">
-  <script src="js/jquery-1.11.0.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/underscore-1.11.0.js"></script>
-  <script src="js/marked.js"></script>
-  <script src="js/store.js"></script>
-  <script src="js/prism.js"></script>
-  <script src="js/ditto.js"></script>
-  <script src="js/statistic.js"></script>
-  <script src="js/utils.js"></script>
+  <link rel="shortcut icon" href="/res/favicon.svg">
 </head>
 <body>
-  <!-- essential -->
-  <div id="sidebar"></div>
-  <div id="content"></div>
-  <!-- optional -->
-  <div id="back_to_top">back to top</div>
-  <div id="edit">edit</div>
-  <div id="theme">theme</div>
-  <div id="loading">Loading ...</div>
-  <div id="error">Oops! ... File not found!</div>
-  <div id="flip"><div id="pageup">上一章</div><div id="pagedown">下一章</div></div>
-  <div class="progress-indicator-2"></div>
+  
+  <div id='app'></div>
 
-  <script src="config-legacy.js"></script>
   <noscript>
     <p>Your browser is not supporting javascript</p>
     <p>Or your browser configuration about javascript is closed.</p>
     <p>Please change your configuration or upgrade your browser.</p>
   </noscript>
+
+  <script src="res/libs/require-2.3.6.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/index.js"></script>
 </body>
 </html>

@@ -3,9 +3,9 @@ define([
     'underscore',
     'backbone',
     'marked',
-    'app/sidebar/SidebarModel',
-    'app/sidebar/SidebarView',
-    'app/content/ContentView'
+    './sidebar/SidebarModel',
+    './sidebar/SidebarView',
+    './content/ContentView'
 ], function (
     $,
     _,
@@ -20,9 +20,17 @@ define([
         el: $('#app'),
 
         initialize: function() {
+            this.initTitle();
             this.sidebarView = new SidebarView();
             this.sidebarModel = new SidebarModel();
             this.contentView = new ContentView();
+        },
+
+        initTitle: function() {
+            $.getJSON('docs/_config.json', function(json){
+            }).success(function(json){
+                $('title').html(json.title);
+            });
         },
 
         render: function() {
@@ -37,12 +45,13 @@ define([
                 error: function(err) {
                     console.log('err ->', err);
                     model.set('data', err);
+                    this.sidebarView.render({data: err});
                 }
             };
             this.sidebarModel.fetch(options);
 
             this.contentView.render();
-            this.$('#app').unwrap(this.$el);
+            $('#app > *').unwrap();
         }
     });
     return AppView;

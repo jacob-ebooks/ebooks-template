@@ -1,0 +1,5 @@
+{
+    "book_title": "My Ebook Name",
+    "sidebar_part": "sidebar.md",
+    "content_part": "content.md"
+}
