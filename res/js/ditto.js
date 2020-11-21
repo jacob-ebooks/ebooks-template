@@ -87,7 +87,7 @@ function init_sidebar_section() {
 function init_searchbar() {
   var search = '<form class="searchBox" onSubmit="return searchbar_listener()">' +
     '<input name="search" type="search">' +
-    '<input type="image" class="searchButton" src="images/magnifier.jpg" alt="Search" />' +
+    '<input type="image" class="searchButton" src="res/images/magnifier.jpg" alt="Search" />' +
     '</form>';
   $(ditto.sidebar_id).find('h2').first().before($(search));
 }
@@ -319,7 +319,7 @@ function router() {
 
   // default page if hash is empty
   if (location.pathname === "/index.html") {
-    path = location.pathname.replace("index.html", ditto.index);
+    path = location.pathname.replace("index2.html", ditto.index);
     normalize_paths();
   } else if (path === "") {
     path = location.pathname + ditto.index;
