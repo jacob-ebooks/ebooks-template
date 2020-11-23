@@ -7,9 +7,10 @@ require.config({
         'handlebars': 'res/libs/handlebars-v4.7.6',
         'text': 'res/libs/require-text-2.0.16',
         'i18n': 'res/libs/require-i18n-2.0.6',
-        'marked': 'js/marked',
-        'prism': 'js/prism',
-        'store': 'js/store'
+        'marked': 'res/js/marked',
+        'prism': 'res/js/prism',
+        'store': 'res/js/store',
+        'constants': 'docs/constants'
     },
     shim: {
         'underscore': {

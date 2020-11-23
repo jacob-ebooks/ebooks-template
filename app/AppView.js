@@ -3,6 +3,7 @@ define([
     'underscore',
     'backbone',
     'marked',
+    'constants',
     './sidebar/SidebarModel',
     './sidebar/SidebarView',
     './content/ContentView'
@@ -11,6 +12,7 @@ define([
     _,
     Backbone,
     marked,
+    Constants,
     SidebarModel,
     SidebarView,
     ContentView
@@ -27,10 +29,7 @@ define([
         },
 
         initTitle: function() {
-            $.getJSON('docs/_config.json', function(json){
-            }).success(function(json){
-                $('title').html(json.title);
-            });
+            $('title').html(Constants.book_title);
         },
 
         render: function() {
